@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>test AJAX</title>
+</head>
+<body>
+<div>
+	<img src="" alt="">
+	<p></p>
+	<span></span>
+	<span></span>
+	<em></em>
+</div>
+<script>
+	var formdata = {
+		psize : 20,
+		type : 10,
+		pageNo : 2,
+	};
+	var url = "http://study.163.com/webDev/couresByCategory.htm?" + serializ(formdata);
+
+	// 获取课程列表
+	function getdata(url){
+		var request = new XMLHttpRequest();
+		request.open("GET", url );
+		request.send();
+		request.onreadystatechange = function() {
+			if (request.readyState===4) {
+				if (request.status===200) { 
+					 data = JSON.parse(request.responseText);
+				} else {
+					alert("发生错误：" + request.status);
+				}
+			} 
+		}
+	}
+
+	// 查询地址序列化
+	function serializ(data){
+		if (!data) return '';
+		var pairs =[];
+		for (var name in data){
+			if(!data.hasOwnProperty(name)) continue;
+			if (typeof data[name]==='function') continue;
+			var value = data[name].toString();
+			name = encodeURIComponent(name);
+			value = encodeURIComponent(value);
+			pairs.push(name+'='+value);
+		}
+		return pairs.join('&');
+	}
+</script>
+</body>
+</html>
