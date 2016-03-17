@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>zp_task_1_5</title>
+	<style>
+	/* cssreset */
+	li{list-style:none;}
+	ul{padding: 0}
+
+	/*  功能 CSS 待补完  */
+	.f-cb{zoom:1;}
+	.f-cb:after{content: '.';display: block;clear: both;height: 0;overflow: hidden;visibility: hidden;}
+	.f-fl{float: left;}
+	.f-fr{float: right;}
+	.f-ib{display: inline-block;}
+	.f-dn{display: none;}
+	.f-b{display: block;}
+	.f-i{display: inline;}
+	
+	.mainwidth{
+		width: 960px;
+		margin: 0 auto;
+	}
+	/* top */
+	.g-top{
+		position: fixed;
+	    top: 0;
+	    left: 0;
+	    z-index: 20;
+	    width: 100%;
+	    height: 80px;
+	    background: linear-gradient(to bottom,#ADCEF0,#5B9FE3);
+	    border-bottom: 1px solid #044e97;
+	}
+	.g-topc{
+		height: 100%;
+		line-height: 80px;
+	}
+	.m-logo img{
+		vertical-align: middle;
+		margin-right: 10px;
+		height: 50px;
+	}
+	.m-nav a {
+		margin-right: 10px;
+    	color:#f8f8ff;
+    	text-decoration:none;
+	}
+	.m-nav a:hover {
+	    color:#f8f8ff;
+	    text-decoration:none;
+	}
+	
+	/* main */
+	/* leftside */
+	.g-lfside{
+		width: auto;
+		height: 800px;
+		background-color: blue;
+		margin:0px 200px 20px 0px;
+	}
+	/* rightside */
+	.g-rtside{
+		width: 180px;
+		height: 500px;
+		background-color: green;
+	}
+	.g-picshow{
+
+		width:80px;
+		background-color: white;
+	}
+	.g-picshow img{
+		width: 80px;
+		height: 80px;
+	}
+	.g-picshow span{
+		display: table;
+		margin:0 auto;
+	}
+
+	/* foot */
+	.g-foot{
+		position: relative;
+		left: 0;
+		bottom: 0;
+	    z-index: 20;
+	    width: 100%;
+	    height: 80px;
+	    background: linear-gradient(to bottom,#ADCEF0,#5B9FE3);
+	    border-top: 1px solid #044e97;
+	}
+	</style>
+</head>
+<body>
+	<div class="g-top ">
+		<div class="g-topc mainwidth">
+			<div class="m-logo f-ib f-fl">
+				<a class="f-ib" href="http://www.baidu.com">
+					<img class="f-ib" src="https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/logo_top_ca79a146.png" alt="">
+				</a>
+				<a class="f-ib" href="http://ife.baidu.com">
+					<img class="f-ib" src="http://ife.baidu.com/asset/img/logo.png" alt="">
+				</a>
+			</div>
+			<div class="m-nav f-ib f-fr">
+				<a class="f-ib" href="http://blog.enderzhou.com"><span>武诚治的Blog</span></a>
+	        	<a class="f-ib" href=""><span>About</span></a>
+			</div>
+		</div>
+	</div>
+	<div class="g-main f-cb">
+		<div class="g-lfside f-fl">
+			<div></div>
+			<div></div>
+			<div class="g-picshow">
+				<ul>
+					<li>
+						<a href="http://ife.baidu.com/user/profile?userId=345" target="_blank">
+							<img src="http://tb.himg.baidu.com/sys/portrait/item/38ede69fb3e4b88be8b3a2550e">
+							<span>周鹏</span>
+						</a>
+					</li>
+					<li>
+						<a href="http://ife.baidu.com/user/profile?userId=832" target="_blank">
+							<img src="http://tb.himg.baidu.com/sys/portrait/item/717c73686175766574e200">
+							<span>杨晓伟</span>
+						</a>
+					</li>
+					<li>
+						<a href="http://ife.baidu.com/user/profile?userId=1736" target="_blank">
+							<img src="http://tb.himg.baidu.com/sys/portrait/item/56d24d616369616c6f6cef28">
+							<span>谢辉</span>
+						</a>
+					</li>
+					<li>
+						<a href="http://ife.baidu.com/user/profile?userId=2231" target="_blank">
+							<img src="http://tb.himg.baidu.com/sys/portrait/item/55d9e4b8a4e78c9ce7baa2e896afb068">
+							<span>柯芸蕾</span>
+						</a>
+					</li>
+					<li>
+						<a href="http://ife.baidu.com/user/profile?userId=7427" target="_blank">
+							<img src="http://tb.himg.baidu.com/sys/portrait/item/a26de69cb1e699afe59da43230361525">
+							<span>朱景坤</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<div></div>
+		</div>
+		<div class="g-rtside f-fr"></div>
+	</div>
+	<div class="g-foot"></div>
+
+	
+
+</body>
+</html>
