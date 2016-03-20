@@ -3,9 +3,28 @@
 <head>
 	<title>zp_task_1_5</title>
 	<style>
-	/* cssreset */
+	/*初始化css*/
+	html,body,h1,h2,h3,h4,h5,h6,div,dl,dt,dd,ul,ol,li,p,blockquote,pre,hr,figure,table,caption,th,td,form,fieldset,legend,input,button,textarea,menu{margin:0;padding:0;}
+	header,footer,section,article,aside,nav,hgroup,address,figure,figcaption,menu,details{display:block;}
+	table{border-collapse:collapse;border-spacing:0;}
+	caption,th{text-align:left;font-weight:normal;}
+	html,body,fieldset,img,iframe,abbr{border:0;}
+	i,cite,em,var,address,dfn{font-style:normal;}
+	[hidefocus],summary{outline:0;}
 	li{list-style:none;}
-	ul{padding: 0}
+	small{font-size:100%;}
+	sup,sub{font-size:83%;}
+	pre,code,kbd,samp{font-family:inherit;}
+	q:before,q:after{content:none;}
+	textarea{overflow:auto;resize:none;}
+	label,summary{cursor:default;}
+	a,button{cursor:pointer;}
+	h1,h2,h3,h4,h5,h6,em,strong,b{font-weight:bold;}
+	del,ins,u,s,a,a:hover{text-decoration:none;}
+	body,textarea,input,button,select,keygen,legend{font:12px/1.14 "微软雅黑",arial,\5b8b\4f53;color:#333;outline:0;}
+	body{background:#fff;}
+	a,{cursor:pointer;}
+	a,a:hover{text-decoration:none;}
 
 	/*  功能 CSS 待补完  */
 	.f-cb{zoom:1;}
@@ -33,8 +52,10 @@
 	    border-bottom: 1px solid #044e97;
 	}
 	.g-topc{
+		width: 95%;
 		height: 100%;
 		line-height: 80px;
+		margin: 0 auto;
 	}
 	.m-logo img{
 		vertical-align: middle;
@@ -52,32 +73,70 @@
 	}
 	
 	/* main */
-	/* leftside */
-	.g-lfside{
-		width: auto;
-		height: 800px;
-		background-color: blue;
-		margin:0px 200px 20px 0px;
+	.g-main{
+		display: table;
+		width: 100%;
+		margin: 80px 0px 0px 0px;
+		background: linear-gradient(to bottom,#E8EEF4,#DAE8F7);
 	}
-	/* rightside */
-	.g-rtside{
-		width: 180px;
-		height: 500px;
-		background-color: green;
-	}
-	.g-picshow{
 
-		width:80px;
+	/* leftside */
+	.g-lfsd{
+		display: table-cell;
+		/*width: 100%;*/
+		height: 800px;
+		margin: 0px 200px 0px 0px;
+	}
+	.m-lf{
+		margin:20px;
+		padding: 20px;
 		background-color: white;
 	}
-	.g-picshow img{
-		width: 80px;
-		height: 80px;
+	.m-lf img{
+		width: 500px;
+		height: 250px;
 	}
-	.g-picshow span{
+	.m-lf .picshow{
+		overflow: hidden;
+	}
+	.picshow li{
+		width: 100px;
+		height: 110px;
+		border:1px solid #999;
+		margin: 10px;
+	}
+	.picshow span{
 		display: table;
 		margin:0 auto;
 	}
+	.picshow img{
+		margin:5px 10px;
+		width: 80px;
+		height: 80px;
+	}
+	.part4 ul li{
+		list-style:inside cjk-ideographic;
+	}
+	.part4 table th,.part4 table td{
+		width: 100px;
+		height: 50px;
+	}
+	/* rightside */
+	.g-rtsd-fix{
+		display: table-cell;
+		width: 320px;
+		height: 300px;
+	}
+	.g-rtsd{
+		position: fixed;
+	    top: 100px;
+	    right: 20px;
+		width: 260px;
+		height: 300px;
+		padding:20px;
+		background-color: #fff;
+	}
+
 
 	/* foot */
 	.g-foot{
@@ -88,13 +147,22 @@
 	    width: 100%;
 	    height: 80px;
 	    background: linear-gradient(to bottom,#ADCEF0,#5B9FE3);
-	    border-top: 1px solid #044e97;
+	    border-top: 1px solid #CCE5FE;
+	}
+	.g-footc{
+		width: 95%;
+		height: 100%;
+		line-height: 80px;
+		margin: 0 auto;
+	}
+	.m-copy{
+		margin:0 auto;
 	}
 	</style>
 </head>
 <body>
 	<div class="g-top ">
-		<div class="g-topc mainwidth">
+		<div class="g-topc">
 			<div class="m-logo f-ib f-fl">
 				<a class="f-ib" href="http://www.baidu.com">
 					<img class="f-ib" src="https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/logo_top_ca79a146.png" alt="">
@@ -104,54 +172,250 @@
 				</a>
 			</div>
 			<div class="m-nav f-ib f-fr">
-				<a class="f-ib" href="http://blog.enderzhou.com"><span>武诚治的Blog</span></a>
-	        	<a class="f-ib" href=""><span>About</span></a>
+	        	<a class="f-ib" href=""><span>滚键盘小组</span></a>
+	        	<a class="f-ib" href="http://blog.enderzhou.com"><span>武诚治的Blog</span></a>
 			</div>
 		</div>
 	</div>
-	<div class="g-main f-cb">
-		<div class="g-lfside f-fl">
-			<div></div>
-			<div></div>
-			<div class="g-picshow">
+	<div class="g-main">
+		<div class="g-lfsd">
+			<div class="m-lf part1">
+				<h1>习近平听取北京冬奥会冬残奥会筹办工作情况汇报</h1>
+				<h2>李克强回应股市：只要你有信心 我就有信心</h2>
+				<span>央视网消息(新闻联播)</span>
+				<p>中共中央总书记、国家主席、中央军委主席习近平18日在中南海主持召开会议，专题听取北京冬奥会、冬残奥会筹办工作情况汇报。他强调，筹办好北京冬奥会、冬残奥会，意义重大，责任重大。要增强使命感、责任感，认真落实创新、协调、绿色、开放、共享的发展理念，坚持绿色办奥、共享办奥、开放办奥、廉洁办奥，高标准、高质量完成各项筹办任务，把北京冬奥会、冬残奥会办成一届精彩、非凡、卓越的奥运盛会，向祖国人民、向国际社会交上一份满意答卷。<a href="http://lianghui.huanqiu.com/2016/roll/2016-03/8722543.html?from=bdwz">习近平两会全纪录</a></p>
+				<img src="http://f.hiphotos.baidu.com/news/q%3D100/sign=7b8b34c94ded2e73fae9822cb700a16d/730e0cf3d7ca7bcb47b71c62b9096b63f724a8ab.jpg" alt="">
+				<p>听取汇报后，习近平发表了重要讲话。他指出，在北京举办一场全球瞩目的冬奥盛会，必将极大振奋民族精神，有利于凝聚海内外中华儿女为实现中华民族伟大复兴而团结奋斗，也有利于向世界进一步展示我国改革开放成就、和平发展主张。筹办北京冬奥会、冬残奥会，为推动京津冀协同发展提供了良好机遇，也为推广普及我国冰雪运动提供了良好机遇。北京冬奥会、冬残奥会筹办工作总体计划已经确定，场馆建设、基础设施建设、生态环境保护、赛事服务组织等各方面任务已经明确，关键是抓好落实。<a href="http://lianghui.huanqiu.com/2016/roll/2016-03/8722543.html?from=bdwz">习近平两会全纪录</a></p>
+			</div>
+			<div class="m-lf part2">
+				<h1>习近平听取北京冬奥会冬残奥会筹办工作情况汇报</h1>
+				<h2>李克强回应股市：只要你有信心 我就有信心</h2>
+				<span>央视网消息(新闻联播)</span>
+				<p>中共中央总书记、国家主席、中央军委主席习近平18日在中南海主持召开会议，专题听取北京冬奥会、冬残奥会筹办工作情况汇报。他强调，筹办好北京冬奥会、冬残奥会，意义重大，责任重大。要增强使命感、责任感，认真落实创新、协调、绿色、开放、共享的发展理念，坚持绿色办奥、共享办奥、开放办奥、廉洁办奥，高标准、高质量完成各项筹办任务，把北京冬奥会、冬残奥会办成一届精彩、非凡、卓越的奥运盛会，向祖国人民、向国际社会交上一份满意答卷。<a href="http://lianghui.huanqiu.com/2016/roll/2016-03/8722543.html?from=bdwz">习近平两会全纪录</a></p>
+				<img src="http://f.hiphotos.baidu.com/news/q%3D100/sign=7b8b34c94ded2e73fae9822cb700a16d/730e0cf3d7ca7bcb47b71c62b9096b63f724a8ab.jpg" alt="">
 				<ul>
-					<li>
+					<li>习近平两会全纪录</li>
+					<li>习近平心中的扶贫短板如何补齐？</li>
+					<li>国平：凝聚最大共识 决胜全面小康</li>
+				</ul>
+			</div>
+			<div class="m-lf picshow f-cb">
+				<h1>滚键盘团队</h1>
+				<ul>
+					<li class="member f-ib f-fl">
 						<a href="http://ife.baidu.com/user/profile?userId=345" target="_blank">
-							<img src="http://tb.himg.baidu.com/sys/portrait/item/38ede69fb3e4b88be8b3a2550e">
 							<span>周鹏</span>
+							<img src="http://tb.himg.baidu.com/sys/portrait/item/38ede69fb3e4b88be8b3a2550e">
 						</a>
 					</li>
-					<li>
+					<li class="member f-ib f-fl">
 						<a href="http://ife.baidu.com/user/profile?userId=832" target="_blank">
-							<img src="http://tb.himg.baidu.com/sys/portrait/item/717c73686175766574e200">
 							<span>杨晓伟</span>
+							<img src="http://tb.himg.baidu.com/sys/portrait/item/717c73686175766574e200">
 						</a>
 					</li>
-					<li>
+					<li class="member f-ib f-fl">
 						<a href="http://ife.baidu.com/user/profile?userId=1736" target="_blank">
-							<img src="http://tb.himg.baidu.com/sys/portrait/item/56d24d616369616c6f6cef28">
 							<span>谢辉</span>
+							<img src="http://tb.himg.baidu.com/sys/portrait/item/56d24d616369616c6f6cef28">
 						</a>
 					</li>
-					<li>
+					<li class="member f-ib f-fl">
 						<a href="http://ife.baidu.com/user/profile?userId=2231" target="_blank">
-							<img src="http://tb.himg.baidu.com/sys/portrait/item/55d9e4b8a4e78c9ce7baa2e896afb068">
 							<span>柯芸蕾</span>
+							<img src="http://tb.himg.baidu.com/sys/portrait/item/55d9e4b8a4e78c9ce7baa2e896afb068">
 						</a>
 					</li>
-					<li>
+					<li class="member f-ib f-fl">
 						<a href="http://ife.baidu.com/user/profile?userId=7427" target="_blank">
-							<img src="http://tb.himg.baidu.com/sys/portrait/item/a26de69cb1e699afe59da43230361525">
 							<span>朱景坤</span>
+							<img src="http://tb.himg.baidu.com/sys/portrait/item/a26de69cb1e699afe59da43230361525">
+						</a>
+					</li>
+					<li class="member f-ib f-fl">
+						<a href="http://ife.baidu.com/user/profile?userId=345" target="_blank">
+							<span>周鹏</span>
+							<img src="http://tb.himg.baidu.com/sys/portrait/item/38ede69fb3e4b88be8b3a2550e">
+						</a>
+					</li>
+					<li class="member f-ib f-fl">
+						<a href="http://ife.baidu.com/user/profile?userId=832" target="_blank">
+							<span>杨晓伟</span>
+							<img src="http://tb.himg.baidu.com/sys/portrait/item/717c73686175766574e200">
+						</a>
+					</li>
+					<li class="member f-ib f-fl">
+						<a href="http://ife.baidu.com/user/profile?userId=1736" target="_blank">
+							<span>谢辉</span>
+							<img src="http://tb.himg.baidu.com/sys/portrait/item/56d24d616369616c6f6cef28">
+						</a>
+					</li>
+					<li class="member f-ib f-fl">
+						<a href="http://ife.baidu.com/user/profile?userId=2231" target="_blank">
+							<span>柯芸蕾</span>
+							<img src="http://tb.himg.baidu.com/sys/portrait/item/55d9e4b8a4e78c9ce7baa2e896afb068">
+						</a>
+					</li>
+					<li class="member f-ib f-fl">
+						<a href="http://ife.baidu.com/user/profile?userId=7427" target="_blank">
+							<span>朱景坤</span>
+							<img src="http://tb.himg.baidu.com/sys/portrait/item/a26de69cb1e699afe59da43230361525">
 						</a>
 					</li>
 				</ul>
 			</div>
-			<div></div>
+			<div class="m-lf part4">
+				<h1>习近平听取北京冬奥会冬残奥会筹办工作情况汇报</h1>
+				<h2>李克强回应股市：只要你有信心 我就有信心</h2>
+				<span>央视网消息(新闻联播)</span>
+				<ul>
+					<li>习近平两会全纪录</li>
+					<li>习近平心中的扶贫短板如何补齐？</li>
+					<li>国平：凝聚最大共识 决胜全面小康</li>
+				</ul>
+				<table>
+					<tr>
+						<th colspan="4">社会主义核心价值观</td>
+					</tr>
+					<tr>
+						<td>富强</td>
+						<td>民主</td>
+						<td>文明</td>
+						<td>和谐</td>
+					</tr>
+					<tr>
+						<td>自由</td>
+						<td>平等</td>
+						<td>公正</td>
+						<td>法治</td>
+					</tr>
+					<tr>
+						<td>爱国</td>
+						<td>敬业</td>
+						<td>诚信</td>
+						<td>友善</td>
+					</tr>
+				</table>
+			</div>
+		</div>		
+		<div class="g-rtsd-fix">
+			<div class="g-rtsd">
+				<h1>滚键盘小组</h1>
+				<form action="">
+					<table>
+						<tr>
+							<th><label for="">请输入邮箱地址:</label></th>
+							<td><input type="text"></td>
+						</tr>
+						<tr>
+							<th></th>
+							<td><span>邮箱地址请按要求格式输入!</span></td>
+						</tr>
+						<tr>
+							<th><label for="">请输入密码:</label></th>
+							<td><input type="text"></td>
+						</tr>
+						<tr>
+							<th><label for="">请再次输入密码:</label></th>
+							<td><input type="text"></td>
+						</tr>
+						<tr>
+							<th></th>
+							<td><span>6~16个字符，区分大小写。</span></td>
+						</tr>
+						<tr>
+		                    <th>
+		                        <label>昵称</label>
+		                    </th>
+		                    <td>
+		                        <input type="text" name="name" id="name">
+		                    </td>
+		                </tr>
+		 
+		                <tr>
+		                    <th>
+		                        <label>城市</label>
+		                    </th>
+		                    <td>
+		                        <select name="edu" id="edu">
+		                            <option value="北京">北京</option>
+		                            <option value="上海">上海</option>
+		                            <option value="广州">广州</option>
+		                            <option value="深圳">深圳</option>
+		                            <option value="杭州">杭州</option>
+		                            <option value="南京">南京</option>
+		                        </select>
+		                    </td>
+		                </tr>
+		                <tr>
+		                    <th>
+		                        <label>性别</label>
+		                    </th>
+		                    <td>
+		                        <input type="radio" checked="checked" name="Sex" value="male" id="male">
+		                        <label for="male">男</label>&nbsp;
+		                        <input type="radio" name="Sex" value="female" id="female">
+		                        <label for="female">女</label>
+		                    </td>
+		                </tr>
+		                <tr>
+		                    <th>
+		                        <label>爱好</label>
+		                    </th>
+		                    <td>
+		                        <input type="checkbox"  name="movie" id="movie">
+		                        <label for="movie">电影</label>
+		                        <input type="checkbox"  name="photo" id="photo">
+		                        <label for="photo">摄影</label>
+		                        <input type="checkbox"  name="music" id="music">
+		                        <label for="music">音乐</label>
+		                        <input type="checkbox"  name="read" id="read">
+		                        <label for="read">阅读</label>
+		                    </td>
+		                </tr>
+		 
+		                <tr>
+		                    <th>
+		                        <label>签名</label>
+		                    </th>
+		                    <td>
+		                        <textarea name="sign"></textarea>
+		                    </td>
+		                </tr>
+		 
+		                <tr>
+		                    <th></th>
+		                    <td>
+		                        <button type="submit">保存</button>
+		                    </td>
+		 
+		                </tr>
+					</table>
+				</form>	
+			</div>
 		</div>
-		<div class="g-rtside f-fr"></div>
 	</div>
-	<div class="g-foot"></div>
+	<div class="g-foot">
+		<div class="g-footc f-cb">
+			<div class="m-logo f-ib f-fl">
+				<a class="f-ib" href="http://www.baidu.com">
+					<img class="f-ib" src="https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/logo_top_ca79a146.png" alt="">
+				</a>
+				<a class="f-ib" href="http://ife.baidu.com">
+					<img class="f-ib" src="http://ife.baidu.com/asset/img/logo.png" alt="">
+				</a>
+			</div>
+			<div class="m-copy  f-ib f-fl">
+				<p>©1988-2016</p>
+			</div>
+			<div class="m-nav f-ib f-fr">
+	        	<a class="f-ib" href=""><span>滚键盘小组</span></a>
+	        	<a class="f-ib" href="http://blog.enderzhou.com"><span>武诚治的Blog</span></a>
+			</div>
+		</div>
+		
+
+	</div>
 
 	
 
