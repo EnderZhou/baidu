@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="zh-CN">
+	<head>
+		<title>task004-滚键盘</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta name="format-detection" content="telephone=no">
+		<link rel="stylesheet"  href="css/index-style.css">
+		<style type="text/css">
+		html, body, div, span, applet, object, iframe,
+		h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+		a, abbr, acronym, address, big, cite, code,
+		del, dfn, em, img, ins, kbd, q, s, samp,
+		small, strike, sub, sup, tt, var,
+		b, u, i, center,
+		dl, dt, dd, ol, ul, li,
+		fieldset, form, label, legend,
+		table, caption, tbody, tfoot, thead, tr, th, td,
+		article, aside, canvas, details, embed, 
+		figure, figcaption, footer, header, hgroup, 
+		menu, nav, output, ruby, section, summary,
+		time, mark, audio, video {
+			margin: 0;
+			padding: 0;
+			border: 0;
+			font-size: 100%;
+			font-family:"Microsoft YaHei","微软雅黑";
+			vertical-align: baseline;
+		}
+		.clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+		.clearfix{zoom:1;}
+		.wrap {
+			width: 100%;
+			height: 500px;
+			border-bottom: 1px solid #ccc;
+		}
+		.main {
+			width: 400px;
+			height: 200px;
+			background-color: #ccc;
+			overflow: hidden;
+			text-align: center;
+			position: relative;
+		}
+		.circle {
+			width: 100px;
+			height: 100px;
+			border-radius: 50%;
+			background-color: #fc0;
+			position: absolute;
+		}
+		.top-left {
+			top: -50px;
+			left: -50px;
+		}
+		.right-bottom {
+			right: -50px;
+			bottom: -50px;
+		}
+		.one {
+			display: table;
+		}
+		.table-cell {
+			display: table-cell;
+			vertical-align: middle;
+		}
+		.one-main {
+			margin: 0 auto;
+		}
+		.two {
+			position: relative;
+		}
+		.two-main {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			margin-left: -200px;
+			margin-top: -100px;
+		}
+		.three {
+			position: relative;
+		}
+		.three-main {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			-webkit-transform: translate(-50%, -50%); 
+      		-ms-transform: translate(-50%, -50%); 
+          	transform: translate(-50%, -50%); 
+		}
+		.four {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+		.four-main {
+
+		}
+		.five {
+			display: flex;
+			align-items: center;
+		}
+		.five-main {
+			margin: 0 auto;
+		}
+		.six {
+			line-height: 500px;
+			text-align: center;
+		}
+		.six-main {
+			display: inline-block;
+			vertical-align: middle;
+			line-height: normal;
+		}
+		</style>
+	</head>
+	<body>
+		<div class="wrap one">
+			<div class="table-cell">
+				<div class="main one-main">
+					第一种
+					<div class="circle top-left"></div>
+					<div class="circle right-bottom"></div>
+				</div>
+			</div>
+		</div>
+		<div class="wrap two">
+			<div class="main two-main">
+				第二种
+				<div class="circle top-left"></div>
+				<div class="circle right-bottom"></div>
+			</div>
+		</div>
+		<div class="wrap three">
+			<div class="main three-main">
+				第三种
+				<div class="circle top-left"></div>
+				<div class="circle right-bottom"></div>
+			</div>
+		</div>
+		<div class="wrap four">
+			<div class="main four-main">
+				第四种
+				<div class="circle top-left"></div>
+				<div class="circle right-bottom"></div>
+			</div>
+		</div>
+		<div class="wrap five">
+			<div class="main five-main">
+				第五种
+				<div class="circle top-left"></div>
+				<div class="circle right-bottom"></div>
+			</div>
+		</div>
+		<div class="wrap six">
+			<div class="main six-main">
+				第六种
+				<div class="circle top-left"></div>
+				<div class="circle right-bottom"></div>
+			</div>
+		</div>
+	</body>
+</html>
