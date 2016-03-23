@@ -17,6 +17,15 @@ function addAqiData() {
 	var city = document.getElementById("aqi-city-input").value;
 	var value = document.getElementById("aqi-value-input").value;
 	// 缺少字符串验证相关代码 待补完
+  if (!aqiData){return;}
+  if (!/(?:^[a-z][a-z]+$|^[\u4e00-\u9fa5][\u4e00-\u9fa5]+$)/.test(city)){
+    alert("城市名必须为2位以上的中文或英文字母组成!");
+    return;
+  }
+  if (!/^\d+$/.test(value)){
+    alert("空气质量指数必须由数字组成!");
+    return;
+  }
 	aqiData[city] = Number(value);
 }
 
@@ -28,6 +37,10 @@ function renderAqiList() {
 	for(x in aqiData){
 		html += '<tr><td>'+x+'</td><td>'+aqiData[x]+'</td><td><button>删除</button></td></tr>'
 	}
+  // if ((typeOf aqiData) !=   "object"){
+  //   aqitable.innerHTML ="";
+  //   return;
+  // }
 	aqitable.innerHTML = html;
 }
 
