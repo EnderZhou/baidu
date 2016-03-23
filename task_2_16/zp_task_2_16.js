@@ -44,12 +44,10 @@ function addBtnHandle() {
  * 点击各个删除按钮的时候的处理逻辑
  * 获取哪个城市数据被删，删除数据，更新表格显示
  */
-function delBtnHandle(event) {
+function delBtnHandle(target) {
   // do sth.
-  var e = event || window.event;
-  var target = e.target||e.srcElement;
-  var x = target.getElementsByTagName("td");
-  delete aqiData[x[0].nodeValue];
+  var city = target.parentNode.parentNode.children[0].innerHTML
+  delete aqiData[city]
   renderAqiList();
 }
 
@@ -57,7 +55,9 @@ function init() {
   // 在这下面给add-btn绑定一个点击事件，点击时触发addBtnHandle函数
   addbtn.addEventListener("click",addBtnHandle,false);
   // 想办法给aqi-table中的所有删除按钮绑定事件，触发delBtnHandle函数
-  aqitable.addEventListener("click",delBtnHandle(event),false);
+  aqitable.addEventListener("click",function(event){
+    delBtnHandle(event.target)
+  },false);
 
 }
 
