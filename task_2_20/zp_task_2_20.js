@@ -2,17 +2,32 @@ var list = {
 	array:["www","bai","du","com","ife"],
 	unshift:function(str){
 		if (str.constructor === Array){
-			for (var i = str.length-1; i >=0; i--) {
+			/*for (var i = str.length-1; i >=0; i--) {
 				this.array.unshift(str[i]);
-			}
-		}else{this.array.unshift(str);}
-		renderNumList();
+			}*/
+			/* 用定时器替换循环 */
+			var i = str.length-1;
+			var timer = setInterval(function(){
+				list.array.unshift(str[i]);
+				renderNumList();
+				i--;
+				if (i<0){clearInterval(timer);timmer=null};
+			},300);
+		}else{this.array.unshift(str);renderNumList();}
 	},
 	push:function(str){
 		if (str.constructor === Array){
-			for (var i = 0; i <str.length; i++) {
+			/*for (var i = 0; i <str.length; i++) {
 				this.array.push(str[i]);
-			}
+			}*/
+			/* 用定时器替换循环 */
+			var i = 0;
+			var timer = setInterval(function(){
+				list.array.push(str[i]);
+				renderNumList();
+				i++;
+				if (i>str.length-1){clearInterval(timer);timmer=null};
+			},300);
 		}else{this.array.push(str);}
 		renderNumList();
 	},
@@ -128,7 +143,7 @@ function init(){
 	btn[0].onclick = function(){
 		var str = strinput.value;
 		if (str == ""||str == undefined){alert("请输入内容!!");return;}
-	    var separator =str.match(/&ensp;|&emsp;|&nbsp;|" "|" "|\.|\/|\\|,|，|、|\t|\n/);
+	    var separator =str.match(/\.|。|\/|\\|,|，|、|\t|\s|\n/);
 	    str = str.split(separator);
 		list.unshift(str);
 		strinput.value = "";
@@ -136,7 +151,7 @@ function init(){
 	btn[1].onclick =  function(){
 		var str = strinput.value;
 		if (str == ""||str == undefined){alert("请输入内容!!");return;}
-	    var separator =str.match(/&ensp;|&emsp;|&nbsp;|" "|" "|\.|\/|\\|,|，|、|\t|\n/);
+	    var separator =str.match(/\.|。|\/|\\|,|，|、|\t|\s|\n/);
 	    str = str.split(separator);
 		list.push(str);
 		strinput.value = "";
@@ -148,5 +163,6 @@ function init(){
 	btn[6].onclick = function(){find()};
 	
 	renderNumList();
+	strinput.value = "ife.baidu.com";
 }
 init();
