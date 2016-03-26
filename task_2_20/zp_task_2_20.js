@@ -1,11 +1,19 @@
 var list = {
-	array:[100,90,80,70,60,50,40,30,20,10],
-	unshift:function(num){
-		this.array.unshift(num);
+	array:["www","bai","du","com","ife"],
+	unshift:function(str){
+		if (str.constructor === Array){
+			for (var i = str.length-1; i >=0; i--) {
+				this.array.unshift(str[i]);
+			}
+		}else{this.array.unshift(str);}
 		renderNumList();
 	},
-	push:function(num){
-		this.array.push(num);
+	push:function(str){
+		if (str.constructor === Array){
+			for (var i = 0; i <str.length; i++) {
+				this.array.push(str[i]);
+			}
+		}else{this.array.push(str);}
 		renderNumList();
 	},
 	shift:function(){
@@ -16,8 +24,8 @@ var list = {
 		list.array.pop();
 		renderNumList();
 	},
-	del:function(num){
-		list.array.splice(num,1);
+	del:function(str){
+		list.array.splice(str,1);
 		renderNumList();
 	}
 }
@@ -119,20 +127,25 @@ function init(){
 	var strinput = document.getElementById("string-input");
 	btn[0].onclick = function(){
 		var str = strinput.value;
-	    num = Number(str);
+		if (str == ""||str == undefined){alert("请输入内容!!");return;}
+	    var separator =str.match(/&ensp;|&emsp;|&nbsp;|" "|" "|\.|\/|\\|,|，|、|\t|\n/);
+	    str = str.split(separator);
 		list.unshift(str);
 		strinput.value = "";
 	}
 	btn[1].onclick =  function(){
 		var str = strinput.value;
-	    str = Number(str);
+		if (str == ""||str == undefined){alert("请输入内容!!");return;}
+	    var separator =str.match(/&ensp;|&emsp;|&nbsp;|" "|" "|\.|\/|\\|,|，|、|\t|\n/);
+	    str = str.split(separator);
 		list.push(str);
 		strinput.value = "";
 	}
 	btn[2].onclick = list.shift;
 	btn[3].onclick = list.pop;
 	btn[4].onclick = function(){random()}; 
-	btn[5].onclick = function(){find()};
+	btn[5].onclick = function(){list.array = [];renderNumList();}
+	btn[6].onclick = function(){find()};
 	
 	renderNumList();
 }
